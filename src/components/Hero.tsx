@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Globe, MapPin, FolderGit2, ArrowDown, Sparkles } from 'lucide-react';
+import { Mail, MapPin, FolderGit2, Sparkles, Award, Briefcase, ArrowDown } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 import { PERSONAL_INFO } from '../data/projects';
 
@@ -51,7 +51,7 @@ export const Hero: React.FC = () => {
                   <span className="eva-logo-core">EVA</span>
                   <span className="eva-logo-bracket">/&gt;</span>
                 </div>
-                <span className="eva-logo-caption">SOFTWARE &amp; WEB DEV</span>
+                <span className="eva-logo-caption">QA AUTOMATION &amp; SDET</span>
               </div>
             </div>
 
@@ -70,20 +70,15 @@ export const Hero: React.FC = () => {
 
               {/* Contact & Info Details (Grid de 2 columnas aprovechando el ancho) */}
               <div className="profile-info-grid">
-                <a 
-                  href={PERSONAL_INFO.githubUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="profile-info-row"
-                >
+                <div className="profile-info-row static">
                   <div className="profile-info-icon">
-                    <GithubIcon size={18} />
+                    <Briefcase size={18} />
                   </div>
                   <div className="profile-info-content">
-                    <span className="profile-info-label">GitHub</span>
-                    <span className="profile-info-text">github.com/{PERSONAL_INFO.githubUser}</span>
+                    <span className="profile-info-label">Empresa Actual</span>
+                    <span className="profile-info-text">{PERSONAL_INFO.currentCompany} (QA Lead)</span>
                   </div>
-                </a>
+                </div>
 
                 <a 
                   href={`mailto:${PERSONAL_INFO.email}`} 
@@ -99,15 +94,17 @@ export const Hero: React.FC = () => {
                 </a>
 
                 <a 
-                  href={PERSONAL_INFO.pagesUrl} 
+                  href={PERSONAL_INFO.githubUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
                   className="profile-info-row"
                 >
                   <div className="profile-info-icon">
-                    <Globe size={18} />
+                    <GithubIcon size={18} />
                   </div>
                   <div className="profile-info-content">
-                    <span className="profile-info-label">Repositorio</span>
-                    <span className="profile-info-text">{PERSONAL_INFO.githubRepo}</span>
+                    <span className="profile-info-label">GitHub</span>
+                    <span className="profile-info-text">github.com/{PERSONAL_INFO.githubUser}</span>
                   </div>
                 </a>
 
@@ -126,26 +123,20 @@ export const Hero: React.FC = () => {
               <div className="hero-actions-wide">
                 <a href="#proyectos" className="btn btn-primary">
                   <FolderGit2 size={18} />
-                  <span>Ver Mis Proyectos</span>
+                  <span>Ver Proyectos</span>
+                </a>
+
+                <a href="#certificaciones" className="btn btn-secondary">
+                  <Award size={18} />
+                  <span>Certificaciones</span>
                 </a>
 
                 <a href="#contacto" className="btn btn-secondary">
                   <Mail size={18} />
                   <span>Contactar</span>
                 </a>
-
-                <a 
-                  href={PERSONAL_INFO.githubUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="btn btn-secondary"
-                >
-                  <GithubIcon size={18} />
-                  <span>Mi GitHub</span>
-                </a>
               </div>
             </div>
-
           </div>
         </div>
 

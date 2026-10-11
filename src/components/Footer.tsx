@@ -15,14 +15,16 @@ export const Footer = () => {
             <span>{PERSONAL_INFO.name}</span>
           </div>
           <p className="footer-tagline">
-            Construido con React, TypeScript y Vite • Preparado para GitHub Pages
+            QA Automation Lead &amp; SDET • Portafolio Profesional • Preparado para GitHub Pages
           </p>
         </div>
 
         <div className="footer-links">
           <a href="#inicio">Inicio</a>
           <a href="#proyectos">Proyectos</a>
+          <a href="#experiencia">Experiencia</a>
           <a href="#habilidades">Habilidades</a>
+          <a href="#certificaciones">Certificaciones</a>
           <a href="#intereses">Intereses</a>
           <a href="#contacto">Contacto</a>
         </div>

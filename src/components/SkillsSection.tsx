@@ -12,7 +12,7 @@ export const SkillsSection: React.FC = () => {
           </span>
           <h2>Habilidades y Herramientas</h2>
           <p>
-            Tecnologías y herramientas que utilizo para construir aplicaciones y sitios web interactivos.
+            Frameworks de automatización, lenguajes, herramientas de pruebas y metodologías que utilizo para garantizar la máxima calidad de software.
           </p>
         </div>
 

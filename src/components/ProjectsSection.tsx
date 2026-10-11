@@ -8,7 +8,7 @@ export const ProjectsSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<string>('Todos');
 
-  const categories = ['Todos', 'Frontend', 'React', 'JavaScript', 'Herramientas', 'En Proceso'];
+  const categories = ['Todos', 'QA Automation', 'Mobile Testing', 'API & Backend', 'Desarrollo Web'];
 
   const filteredProjects = useMemo(() => {
     return PROJECTS_DATA.filter((project) => {
@@ -45,9 +45,9 @@ export const ProjectsSection = () => {
           <span className="badge badge-cyan section-tag">
             <FolderGit2 size={14} /> Catálogo de Proyectos
           </span>
-          <h2>Mis Proyectos</h2>
+          <h2>Proyectos &amp; Frameworks</h2>
           <p>
-            Aquí puedes explorar mis proyectos y desarrollos. Cada uno cuenta con demostración en vivo y acceso al código fuente en GitHub.
+            Arquitecturas de automatización, suites de pruebas para Web, Móviles y validación profunda de APIs.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export const ProjectsSection = () => {
             <Search size={18} className="search-icon" />
             <input
               type="text"
-              placeholder="Buscar proyecto por nombre, tecnología (React, JS...) o descripción..."
+              placeholder="Buscar por tecnología (Playwright, Appium, TypeScript, Postman, SQL...)"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="search-input"

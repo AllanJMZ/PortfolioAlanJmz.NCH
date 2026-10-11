@@ -694,6 +694,171 @@
 }
 
 /* ==========================================================================
+   EXPERIENCE SECTION
+   ========================================================================== */
+.experience-section {
+  position: relative;
+}
+
+.experience-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.exp-card {
+  padding: 32px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.exp-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--eva-purple);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.exp-card-current {
+  border-color: rgba(34, 197, 94, 0.4);
+  background: linear-gradient(145deg, rgba(20, 16, 32, 0.85) 0%, rgba(13, 11, 22, 0.95) 100%);
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.12);
+}
+
+.exp-card-current:hover {
+  border-color: var(--eva-green);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4), 0 0 28px rgba(34, 197, 94, 0.25);
+}
+
+.exp-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.exp-company-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.exp-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--eva-green);
+  flex-shrink: 0;
+}
+
+.exp-icon-box.edu-icon-box {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: var(--eva-purple);
+}
+
+.exp-role {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.exp-company {
+  font-size: 0.98rem;
+  color: var(--eva-green);
+  font-weight: 600;
+}
+
+.exp-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.exp-period-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-subtle);
+}
+
+.exp-current-pill {
+  font-size: 0.76rem;
+}
+
+.exp-highlights-list {
+  list-style: none;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exp-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.exp-bullet-icon {
+  color: var(--eva-green);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.edu-item {
+  background: rgba(139, 92, 246, 0.06);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edu-degree {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.edu-institution {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin: 0 0 6px;
+}
+
+.edu-status {
+  align-self: flex-start;
+  font-size: 0.76rem;
+}
+
+/* ==========================================================================
    SKILLS SECTION
    ========================================================================== */
 .skills-grid {
@@ -732,6 +897,139 @@
 .skill-check-icon {
   color: var(--eva-green);
   flex-shrink: 0;
+}
+
+/* ==========================================================================
+   CERTIFICATIONS SECTION
+   ========================================================================== */
+.certifications-section {
+  position: relative;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.cert-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--eva-green);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 24px var(--eva-green-glow);
+}
+
+.cert-card-featured {
+  border-color: rgba(34, 197, 94, 0.35);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.1);
+}
+
+.cert-card-pending {
+  border-color: rgba(139, 92, 246, 0.25);
+  opacity: 0.92;
+}
+
+.cert-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cert-icon-wrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cert-icon.verified {
+  color: var(--eva-green);
+}
+
+.cert-icon.pending {
+  color: var(--eva-purple);
+}
+
+.cert-card-pending .cert-icon-wrapper {
+  background: rgba(139, 92, 246, 0.14);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.cert-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.cert-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cert-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.cert-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cert-issuer {
+  font-size: 0.92rem;
+  color: var(--eva-green);
+  font-weight: 600;
+  margin: 0;
+}
+
+.cert-card-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.cert-action-btn {
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+}
+
+.cert-pending-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 6px 0;
 }
 
 /* ==========================================================================

@@ -60,7 +60,7 @@ export const ContactSection = () => {
               </div>
               <div className="contact-text">
                 <span className="contact-label">LinkedIn</span>
-                <span className="contact-value">Ver Perfil</span>
+                <span className="contact-value">allan-jimenez</span>
               </div>
               <ArrowUpRight size={18} className="contact-arrow" />
             </a>
