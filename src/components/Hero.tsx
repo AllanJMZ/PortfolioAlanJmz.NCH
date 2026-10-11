@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Globe, MapPin, FolderGit2, ArrowDown } from 'lucide-react';
+import { Mail, Globe, MapPin, FolderGit2, ArrowDown, Sparkles } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 import { PERSONAL_INFO } from '../data/projects';
 
@@ -16,115 +16,137 @@ export const Hero: React.FC = () => {
           <span>Disponible para proyectos • En línea</span>
         </div>
 
-        {/* Digital Business Card (Inspirada en la imagen de presentación) */}
-        <div className="profile-card-phone-frame">
-          <div className="profile-card-glass">
+        {/* Widescreen Digital Business Card (Aprovechando el ancho completo) */}
+        <div className="profile-card-wide-frame">
+          <div className="profile-card-glass wide">
             
-            {/* Top Avatar with Evangelion Glowing Dual-Ring */}
-            <div className="profile-avatar-container">
-              <div className="profile-avatar-ring">
-                {!imgError ? (
-                  <img
-                    src="./avatar.png"
-                    alt={PERSONAL_INFO.name}
-                    className="profile-avatar-img"
-                    onError={() => setImgError(true)}
-                  />
-                ) : (
-                  <div className="profile-avatar-fallback">
-                    <span>AJ</span>
+            {/* Left Side: Avatar & Identity Column */}
+            <div className="profile-card-left-col">
+              <div className="profile-avatar-container">
+                <div className="profile-avatar-ring">
+                  {!imgError ? (
+                    <img
+                      src="./avatar.png"
+                      alt={PERSONAL_INFO.name}
+                      className="profile-avatar-img"
+                      onError={() => setImgError(true)}
+                    />
+                  ) : (
+                    <div className="profile-avatar-fallback">
+                      <span>AJ</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="profile-identity">
+                <h1 className="profile-name">{PERSONAL_INFO.name}</h1>
+                <p className="profile-role">{PERSONAL_INFO.title}</p>
+              </div>
+
+              {/* Bottom Emblem Logo */}
+              <div className="profile-card-footer-logo">
+                <div className="eva-logo-symbol">
+                  <span className="eva-logo-bracket">&lt;</span>
+                  <span className="eva-logo-core">EVA</span>
+                  <span className="eva-logo-bracket">/&gt;</span>
+                </div>
+                <span className="eva-logo-caption">SOFTWARE &amp; WEB DEV</span>
+              </div>
+            </div>
+
+            {/* Right Side: Bio, Contact Grid & Actions Column */}
+            <div className="profile-card-right-col">
+              {/* Bio Description */}
+              <div className="profile-bio-box">
+                <div className="bio-tag-row">
+                  <Sparkles size={16} className="text-eva-green" />
+                  <span>Sobre Mí</span>
+                </div>
+                <p className="profile-bio-text">
+                  {PERSONAL_INFO.bio}
+                </p>
+              </div>
+
+              {/* Contact & Info Details (Grid de 2 columnas aprovechando el ancho) */}
+              <div className="profile-info-grid">
+                <a 
+                  href={PERSONAL_INFO.githubUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="profile-info-row"
+                >
+                  <div className="profile-info-icon">
+                    <GithubIcon size={18} />
                   </div>
-                )}
-              </div>
-            </div>
+                  <div className="profile-info-content">
+                    <span className="profile-info-label">GitHub</span>
+                    <span className="profile-info-text">github.com/{PERSONAL_INFO.githubUser}</span>
+                  </div>
+                </a>
 
-            {/* Name and Professional Title (Limpio, elegante, sin "Hola soy") */}
-            <div className="profile-identity">
-              <h1 className="profile-name">{PERSONAL_INFO.name}</h1>
-              <p className="profile-role">{PERSONAL_INFO.title}</p>
-            </div>
+                <a 
+                  href={`mailto:${PERSONAL_INFO.email}`} 
+                  className="profile-info-row"
+                >
+                  <div className="profile-info-icon">
+                    <Mail size={18} />
+                  </div>
+                  <div className="profile-info-content">
+                    <span className="profile-info-label">Correo</span>
+                    <span className="profile-info-text">{PERSONAL_INFO.email}</span>
+                  </div>
+                </a>
 
-            {/* Contact & Info Details List (Formato exacto de la tarjeta de presentación) */}
-            <div className="profile-info-list">
-              <a 
-                href={PERSONAL_INFO.githubUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="profile-info-row"
-              >
-                <div className="profile-info-icon">
-                  <GithubIcon size={18} />
+                <a 
+                  href={PERSONAL_INFO.pagesUrl} 
+                  className="profile-info-row"
+                >
+                  <div className="profile-info-icon">
+                    <Globe size={18} />
+                  </div>
+                  <div className="profile-info-content">
+                    <span className="profile-info-label">Repositorio</span>
+                    <span className="profile-info-text">{PERSONAL_INFO.githubRepo}</span>
+                  </div>
+                </a>
+
+                <div className="profile-info-row static">
+                  <div className="profile-info-icon">
+                    <MapPin size={18} />
+                  </div>
+                  <div className="profile-info-content">
+                    <span className="profile-info-label">Ubicación</span>
+                    <span className="profile-info-text">{PERSONAL_INFO.location}</span>
+                  </div>
                 </div>
-                <span className="profile-info-text">github.com/{PERSONAL_INFO.githubUser}</span>
-              </a>
+              </div>
 
-              <a 
-                href={`mailto:${PERSONAL_INFO.email}`} 
-                className="profile-info-row"
-              >
-                <div className="profile-info-icon">
+              {/* Action Buttons (Estilo cápsula de YouTube con acentos Evangelion) */}
+              <div className="hero-actions-wide">
+                <a href="#proyectos" className="btn btn-primary">
+                  <FolderGit2 size={18} />
+                  <span>Ver Mis Proyectos</span>
+                </a>
+
+                <a href="#contacto" className="btn btn-secondary">
                   <Mail size={18} />
-                </div>
-                <span className="profile-info-text">{PERSONAL_INFO.email}</span>
-              </a>
+                  <span>Contactar</span>
+                </a>
 
-              <a 
-                href={PERSONAL_INFO.pagesUrl} 
-                className="profile-info-row"
-              >
-                <div className="profile-info-icon">
-                  <Globe size={18} />
-                </div>
-                <span className="profile-info-text">{PERSONAL_INFO.githubRepo}</span>
-              </a>
-
-              <div className="profile-info-row static">
-                <div className="profile-info-icon">
-                  <MapPin size={18} />
-                </div>
-                <span className="profile-info-text">{PERSONAL_INFO.location}</span>
+                <a 
+                  href={PERSONAL_INFO.githubUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn btn-secondary"
+                >
+                  <GithubIcon size={18} />
+                  <span>Mi GitHub</span>
+                </a>
               </div>
-            </div>
-
-            {/* Bottom Emblem / Logo Brand */}
-            <div className="profile-card-footer-logo">
-              <div className="eva-logo-symbol">
-                <span className="eva-logo-bracket">&lt;</span>
-                <span className="eva-logo-core">EVA</span>
-                <span className="eva-logo-bracket">/&gt;</span>
-              </div>
-              <span className="eva-logo-caption">SOFTWARE &amp; WEB DEV</span>
             </div>
 
           </div>
-        </div>
-
-        {/* Bio Description */}
-        <p className="hero-description">
-          {PERSONAL_INFO.bio}
-        </p>
-
-        {/* Action Buttons (Estilo cápsula de YouTube con acentos Evangelion) */}
-        <div className="hero-actions">
-          <a href="#proyectos" className="btn btn-primary">
-            <FolderGit2 size={18} />
-            <span>Ver Mis Proyectos</span>
-          </a>
-
-          <a href="#contacto" className="btn btn-secondary">
-            <Mail size={18} />
-            <span>Contactar</span>
-          </a>
-
-          <a 
-            href={PERSONAL_INFO.githubUrl} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn btn-secondary"
-          >
-            <GithubIcon size={18} />
-            <span>Mi GitHub</span>
-          </a>
         </div>
 
         {/* Scroll hint indicator */}
