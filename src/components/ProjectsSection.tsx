@@ -8,7 +8,7 @@ export const ProjectsSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<string>('Todos');
 
-  const categories = ['Todos', 'Frontend', 'Herramientas', 'En Proceso'];
+  const categories = ['Todos', 'Frontend', 'React', 'JavaScript', 'Herramientas', 'En Proceso'];
 
   const filteredProjects = useMemo(() => {
     return PROJECTS_DATA.filter((project) => {
@@ -18,7 +18,9 @@ export const ProjectsSection = () => {
         project.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()));
 
       const matchesCategory =
-        activeCategory === 'Todos' || project.category === activeCategory;
+        activeCategory === 'Todos' ||
+        project.category === activeCategory ||
+        project.tags.includes(activeCategory);
 
       return matchesSearch && matchesCategory;
     });
@@ -45,7 +47,7 @@ export const ProjectsSection = () => {
           </span>
           <h2>Mis Proyectos</h2>
           <p>
-            Aquí puedes ver los proyectos que he desarrollado. Cada uno cuenta con demostración en vivo y acceso al código fuente en GitHub.
+            Aquí puedes explorar mis proyectos y desarrollos. Cada uno cuenta con demostración en vivo y acceso al código fuente en GitHub.
           </p>
         </div>
 
@@ -122,7 +124,7 @@ export const ProjectsSection = () => {
                   ))}
                 </div>
 
-                {/* Actions */}
+                {/* Actions with YouTube-style button design */}
                 <div className="project-card-actions">
                   {project.demoUrl && project.demoUrl !== '#' ? (
                     <a
