@@ -16,8 +16,6 @@ export const PERSONAL_INFO = {
   title: 'Ingeniero de QA Automation & QA Lead | SDET',
   shortTitle: 'QA Lead & SDET',
   bio: 'Ingeniero de QA Automation y QA Lead con sólida trayectoria en el diseño, ejecución y liderazgo de estrategias de pruebas de software para aplicaciones web, móviles y arquitecturas backend/APIs. Especializado en frameworks de automatización con Playwright, Appium, Selenium y TypeScript/Java/Python.',
-  currentCompany: 'Grupo Bimbo',
-  currentRole: 'QA Lead Analyst & QA Automation Lead',
   education: 'Licenciatura en Informática — UNAM (Titulado con Cédula Profesional)',
   location: 'CDMX, México • Remoto / Híbrido',
   githubUser: 'AllanJMZ',
@@ -29,48 +27,6 @@ export const PERSONAL_INFO = {
   email: 'eallan.jcruz@gmail.com',
   phone: '5551892244',
 };
-
-export interface ExperienceItem {
-  company: string;
-  role: string;
-  period: string;
-  location?: string;
-  highlights: string[];
-  current?: boolean;
-}
-
-export const EXPERIENCE_DATA: ExperienceItem[] = [
-  {
-    company: 'Grupo Bimbo',
-    role: 'QA Lead Analyst & QA Automation Lead',
-    period: 'Octubre 2023 – Presente',
-    highlights: [
-      'Lidero las actividades estratégicas de QA coordinando equipos multidisciplinarios en proyectos internacionales (España, Chile, Colombia, Ecuador, Guatemala y Panamá).',
-      'Diseño e implemento frameworks de automatización E2E para Web y Móviles (Android/iOS) con Playwright, Appium y TypeScript/Java.',
-      'Ejecuto validación profunda de servicios backend REST y XML (Postman, validación de payloads y consultas complejas en bases de datos SQL).',
-      'Análisis técnico de causa raíz mediante registros en Android con Logcat y optimización continua con Lean & Six Sigma.'
-    ],
-    current: true,
-  },
-  {
-    company: 'TSOFT',
-    role: 'QA Tester Analyst',
-    period: 'Mayo 2023 – Octubre 2023',
-    highlights: [
-      'Diseño y ejecución de matrices de prueba funcionales en Jira y Zephyr en entornos Ágiles (Scrum).',
-      'Pruebas de Integración, Regresión, UAT y UX; gestión y seguimiento al ciclo de vida completo de defectos.'
-    ],
-  },
-  {
-    company: 'DGPFE - UNAM',
-    role: 'Desarrollador & QA (Servicio Social)',
-    period: 'Agosto 2023 – Marzo 2024',
-    highlights: [
-      'Desarrollo de componentes web (JS, HTML, CSS) y bases de datos MySQL para la plataforma de e-commerce de librerías UNAM.',
-      'Diseño de pruebas funcionales e implementación de estándares de QA para el sistema de librerías.'
-    ],
-  },
-];
 
 export interface CertificationItem {
   id: string;

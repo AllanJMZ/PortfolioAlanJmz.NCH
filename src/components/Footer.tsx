@@ -22,7 +22,6 @@ export const Footer = () => {
         <div className="footer-links">
           <a href="#inicio">Inicio</a>
           <a href="#proyectos">Proyectos</a>
-          <a href="#experiencia">Experiencia</a>
           <a href="#habilidades">Habilidades</a>
           <a href="#certificaciones">Certificaciones</a>
           <a href="#intereses">Intereses</a>

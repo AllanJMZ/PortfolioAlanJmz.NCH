@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, FolderGit2, Sparkles, Award, Briefcase, ArrowDown } from 'lucide-react';
+import { Mail, MapPin, FolderGit2, Sparkles, Award, GraduationCap, ArrowDown } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 import { PERSONAL_INFO } from '../data/projects';
 
@@ -72,11 +72,11 @@ export const Hero: React.FC = () => {
               <div className="profile-info-grid">
                 <div className="profile-info-row static">
                   <div className="profile-info-icon">
-                    <Briefcase size={18} />
+                    <GraduationCap size={18} />
                   </div>
                   <div className="profile-info-content">
-                    <span className="profile-info-label">Empresa Actual</span>
-                    <span className="profile-info-text">{PERSONAL_INFO.currentCompany} (QA Lead)</span>
+                    <span className="profile-info-label">Educación</span>
+                    <span className="profile-info-text">Lic. en Informática (UNAM)</span>
                   </div>
                 </div>
 
