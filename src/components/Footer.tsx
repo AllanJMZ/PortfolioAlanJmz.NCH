@@ -1,0 +1,43 @@
+import { Code2 } from 'lucide-react';
+import { GithubIcon } from './BrandIcons';
+import { PERSONAL_INFO } from '../data/projects';
+
+export const Footer = () => {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="footer-container">
+      <div className="container footer-content">
+        <div className="footer-left">
+          <div className="footer-logo">
+            <Code2 size={18} className="logo-icon" />
+            <span>{PERSONAL_INFO.name}</span>
+          </div>
+          <p className="footer-tagline">
+            Construido con React, TypeScript y Vite • Preparado para GitHub Pages
+          </p>
+        </div>
+
+        <div className="footer-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+
+        <div className="footer-right">
+          <a 
+            href={PERSONAL_INFO.githubUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="footer-gh-link"
+            title="Ver GitHub"
+          >
+            <GithubIcon size={18} />
+          </a>
+          <span className="footer-copy">© {year} Todos los derechos reservados.</span>
+        </div>
+      </div>
+    </footer>
+  );
+};
