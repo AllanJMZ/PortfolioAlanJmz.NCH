@@ -1,4 +1,3 @@
-import { Code2 } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 import { PERSONAL_INFO } from '../data/projects';
 
@@ -10,7 +9,9 @@ export const Footer = () => {
       <div className="container footer-content">
         <div className="footer-left">
           <div className="footer-logo">
-            <Code2 size={18} className="logo-icon" />
+            <div className="logo-icon-box footer-logo-box">
+              <img src="./logo.png" alt="Logo" className="nav-logo-img" />
+            </div>
             <span>{PERSONAL_INFO.name}</span>
           </div>
           <p className="footer-tagline">
@@ -22,6 +23,7 @@ export const Footer = () => {
           <a href="#inicio">Inicio</a>
           <a href="#proyectos">Proyectos</a>
           <a href="#habilidades">Habilidades</a>
+          <a href="#intereses">Intereses</a>
           <a href="#contacto">Contacto</a>
         </div>
 

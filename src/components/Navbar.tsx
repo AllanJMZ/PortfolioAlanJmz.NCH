@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Moon, Sun, Code2, FolderGit2, Mail } from 'lucide-react';
+import { Moon, Sun, Code2, FolderGit2, Sparkles, Mail } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 import { PERSONAL_INFO } from '../data/projects';
 
@@ -28,7 +28,7 @@ export const Navbar = () => {
       <div className="container navbar-container">
         <a href="#inicio" className="navbar-logo">
           <div className="logo-icon-box">
-            <Code2 size={20} className="logo-icon" />
+            <img src="./logo.png" alt="Logo" className="nav-logo-img" />
           </div>
           <span className="logo-text">{PERSONAL_INFO.name}</span>
         </a>
@@ -41,6 +41,10 @@ export const Navbar = () => {
           <a href="#habilidades" className="nav-link">
             <Code2 size={16} />
             <span>Habilidades</span>
+          </a>
+          <a href="#intereses" className="nav-link">
+            <Sparkles size={16} />
+            <span>Intereses</span>
           </a>
           <a href="#contacto" className="nav-link">
             <Mail size={16} />

@@ -41,15 +41,38 @@
 }
 
 .logo-icon-box {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm);
-  background: var(--gradient-eva);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #08070e;
-  box-shadow: 0 0 16px var(--eva-green-glow);
+  box-shadow: 0 0 14px var(--eva-green-glow);
+  overflow: hidden;
+  padding: 3px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.navbar-logo:hover .logo-icon-box {
+  transform: rotate(-6deg) scale(1.08);
+  border-color: var(--eva-green);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.45);
+}
+
+.nav-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.35));
+}
+
+.footer-logo-box {
+  width: 32px;
+  height: 32px;
+  padding: 2px;
 }
 
 .navbar-links {
@@ -710,6 +733,174 @@
 .skill-check-icon {
   color: var(--eva-green);
   flex-shrink: 0;
+}
+
+/* ==========================================================================
+   INTERESTS & PERSONALITY SECTION
+   ========================================================================== */
+.interests-section {
+  position: relative;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.interest-card {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.interest-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--eva-purple);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 24px rgba(139, 92, 246, 0.2);
+}
+
+.interest-card-special {
+  background: linear-gradient(145deg, rgba(20, 16, 32, 0.85) 0%, rgba(13, 11, 22, 0.95) 100%);
+  border-color: rgba(34, 197, 94, 0.35);
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.12);
+}
+
+.interest-card-special:hover {
+  border-color: var(--eva-green);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4), 0 0 30px rgba(34, 197, 94, 0.25);
+}
+
+.interest-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.interest-avatar-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: rgba(139, 92, 246, 0.14);
+  border: 2px solid var(--eva-green);
+  box-shadow: 0 0 16px var(--eva-green-glow);
+  padding: 3px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.interest-card:hover .interest-avatar-wrapper {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.interest-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 13px;
+}
+
+.interest-avatar-pulse {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--eva-green);
+  box-shadow: 0 0 8px var(--eva-green);
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.interest-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.interest-card:hover .interest-icon-box {
+  transform: scale(1.08);
+  border-color: var(--eva-green);
+}
+
+.interest-icon.scifi {
+  color: var(--eva-purple);
+}
+
+.interest-icon.gaming {
+  color: var(--eva-green);
+}
+
+.interest-icon.coffee {
+  color: #f59e0b;
+}
+
+.interest-icon.cat {
+  color: #ec4899;
+}
+
+.interest-badges-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.interest-tag {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.interest-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--eva-green);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.interest-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.interest-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.interest-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
 }
 
 /* ==========================================================================

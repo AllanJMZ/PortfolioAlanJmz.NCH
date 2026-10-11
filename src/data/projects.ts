@@ -88,3 +88,54 @@ export const SKILLS_LIST = [
   { category: 'Diseño & Experiencia de Usuario', items: ['Diseño 100% Responsivo', 'Botones & Estilos Modernos', 'Modo Oscuro & Claro', 'Componentes Modulares'] },
   { category: 'Herramientas & Flujo de Trabajo', items: ['Git & GitHub', 'GitHub Pages (Automático)', 'Vite', 'Terminal & npm'] },
 ];
+
+export interface InterestItem {
+  id: string;
+  title: string;
+  tag: string;
+  description: string;
+  iconType: 'cat' | 'scifi' | 'gaming' | 'coffee';
+  image?: string;
+  imageAlt?: string;
+  badge?: string;
+  isSpecial?: boolean;
+}
+
+export const INTERESTS_DATA: InterestItem[] = [
+  {
+    id: 'cat-qa',
+    title: 'Michi Elegante (QA & Chief Officer)',
+    tag: 'Compañero Dev',
+    description: 'Mi supervisor felino de código en traje de gala. Encargado oficial de vigilar los despliegues a producción con cero tolerancia a los errores y máxima elegancia.',
+    iconType: 'cat',
+    image: './meme-cat.png',
+    imageAlt: 'Gatito formal con traje y corbata',
+    badge: '100% Sin Bugs',
+    isSpecial: true,
+  },
+  {
+    id: 'scifi-anime',
+    title: 'Estética Evangelion & Sci-Fi',
+    tag: 'Diseño & Inspiración',
+    description: 'Apasionado por el anime de mechas, el cyberpunk y las interfaces retro-futuristas. La paleta de este sitio está directamente inspirada en el EVA-01.',
+    iconType: 'scifi',
+    badge: 'EVA-01 Vibe',
+  },
+  {
+    id: 'gaming-logic',
+    title: 'Gaming & Estrategia',
+    tag: 'Lógica & Desafíos',
+    description: 'Entusiasta de los juegos de táctica, acertijos y resolución de problemas interactivos que ejercitan el pensamiento lateral y la concentración.',
+    iconType: 'gaming',
+    badge: 'Pensamiento Lateral',
+  },
+  {
+    id: 'setup-coffee',
+    title: 'Setup Minimalista & Café',
+    tag: 'Productividad',
+    description: 'Cuidar cada detalle del entorno de trabajo: atajos de teclado, automatización, código legible y un café recién preparado para mantener el foco.',
+    iconType: 'coffee',
+    badge: 'Flujo Limpio',
+  },
+];
+
