@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
   name: 'Allan Jiménez',
   title: 'Ingeniero de QA Automation & QA Lead Jr | SDET',
   shortTitle: 'QA Lead Jr & SDET',
-  bio: 'Ingeniero de QA Automation y QA Lead Jr con título y cédula profesional en Informática / Computación (UNAM). Persona dedicada, persistente y con ambición constante, motivado siempre en encontrar el «cómo sí» ante cualquier desafío técnico. Me mantengo al día con las nuevas tecnologías, frameworks modernos y soluciones frescas y escalables.',
+  bio: 'Ingeniero de QA Automation y QA Lead Jr con título y cédula profesional en Informática / Computación (UNAM). Persona dedicada, persistente y con ambición constante, motivado ante cualquier desafío técnico. Me mantengo al día con las nuevas tecnologías, frameworks modernos y soluciones frescas y escalables.',
   education: 'Licenciatura en Informática / Computación — UNAM (Titulado con Cédula Profesional)',
   location: 'CDMX, México • Remoto / Híbrido',
   githubUser: 'AllanJMZ',
