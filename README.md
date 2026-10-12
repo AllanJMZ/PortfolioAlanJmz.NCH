@@ -41,13 +41,16 @@ portfolio/
 │   └── favicon.svg             # Ícono de pestaña del navegador
 ├── src/
 │   ├── components/
-│   │   ├── BrandIcons.tsx      # Íconos de GitHub y LinkedIn
-│   │   ├── ContactSection.tsx  # Sección de contacto
-│   │   ├── Footer.tsx          # Pie de página
-│   │   ├── Hero.tsx            # Presentación inicial
-│   │   ├── Navbar.tsx          # Barra de navegación superior
-│   │   ├── ProjectsSection.tsx # Tarjetas y buscador de proyectos
-│   │   └── SkillsSection.tsx   # Panel de habilidades
+│   │   ├── BrandIcons.tsx            # Íconos de GitHub y LinkedIn
+│   │   ├── CertificationsSection.tsx # Sección de certificaciones oficiales
+│   │   ├── ContactSection.tsx        # Sección de contacto
+│   │   ├── Footer.tsx                # Pie de página
+│   │   ├── Hero.tsx                  # Tarjeta de presentación digital
+│   │   ├── InterestsSection.tsx      # Sección de intereses personales y mascota
+│   │   ├── Navbar.tsx                # Barra de navegación superior
+│   │   ├── ProjectsSection.tsx       # Tarjetas y buscador de proyectos
+│   │   ├── ScrollToTop.tsx           # Botón flotante para volver arriba
+│   │   └── SkillsSection.tsx         # Panel de habilidades técnicas
 │   ├── data/
 │   │   └── projects.ts         # ⭐ AQUÍ AGREGAS Y MODIFICAS TUS PROYECTOS
 │   ├── App.css                 # Estilos específicos de cada sección

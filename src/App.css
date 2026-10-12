@@ -1257,5 +1257,85 @@
     flex-direction: column;
     text-align: center;
   }
+
+  .scroll-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+  }
 }
+
+/* ==========================================================================
+   SCROLL TO TOP BUTTON (FLECHA FLOTANTE INFERIOR DERECHA)
+   ========================================================================== */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid var(--border-medium);
+  color: var(--eva-green);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), 0 0 15px rgba(139, 92, 246, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px) scale(0.9);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.scroll-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-to-top-btn:hover {
+  background: rgba(139, 92, 246, 0.25);
+  border-color: var(--eva-green);
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 6px 24px rgba(34, 197, 94, 0.35), 0 0 25px rgba(139, 92, 246, 0.45);
+}
+
+.scroll-to-top-btn:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.scroll-arrow-icon {
+  transition: transform 0.2s ease;
+}
+
+.scroll-to-top-btn:hover .scroll-arrow-icon {
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .scroll-to-top-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(109, 40, 217, 0.25);
+  box-shadow: 0 4px 18px rgba(109, 40, 217, 0.15);
+  color: var(--eva-purple);
+}
+
+[data-theme="light"] .scroll-to-top-btn:hover {
+  background: #ffffff;
+  border-color: var(--eva-green);
+  color: var(--eva-green);
+}
+
 

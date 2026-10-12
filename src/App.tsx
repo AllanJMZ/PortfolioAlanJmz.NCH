@@ -6,6 +6,7 @@ import { CertificationsSection } from './components/CertificationsSection';
 import { InterestsSection } from './components/InterestsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 import './App.css';
 
 export function App() {
@@ -21,6 +22,7 @@ export function App() {
         <ContactSection />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
