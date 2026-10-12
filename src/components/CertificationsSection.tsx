@@ -10,7 +10,7 @@ export const CertificationsSection: React.FC = () => {
   return (
     <section id="certificaciones" className="section-padding certifications-section">
       <div className="container">
-        {/* Section Header */}
+        {/* Encabezado de la sección */}
         <div className="section-header">
           <span className="badge badge-emerald section-tag">
             <Award size={14} /> {t.tag}
@@ -19,9 +19,9 @@ export const CertificationsSection: React.FC = () => {
           <p>{t.subtitle}</p>
         </div>
 
-        {/* Certifications Grid */}
+        {/* Cuadrícula de certificaciones y grados académicos */}
         <div className="certifications-grid">
-          {/* Tarjeta destacada de Título Universitario & Cédula Profesional */}
+          {/* Acreditación de grado académico y cédula profesional */}
           <div className="glass-card cert-card cert-card-featured cert-degree-card">
             <div className="cert-card-top">
               <div className="cert-icon-wrapper degree-icon">
@@ -48,7 +48,7 @@ export const CertificationsSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Resto de Certificaciones */}
+          {/* Certificaciones técnicas y profesionales */}
           {I18N_CERTIFICATIONS.map((cert) => {
             const isVerified = cert.status === 'Verificada';
 

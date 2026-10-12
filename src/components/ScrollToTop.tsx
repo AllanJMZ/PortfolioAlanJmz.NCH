@@ -8,7 +8,7 @@ export const ScrollToTop = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Mostrar el botón cuando se haya desplazado más de 250px hacia abajo
+      // Controla la visibilidad del botón al superar el umbral de desplazamiento
       if (window.scrollY > 250) {
         setIsVisible(true);
       } else {

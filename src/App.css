@@ -1,8 +1,8 @@
 /* ==========================================================================
-   APP STYLES - PORTFOLIO WEB (EVANGELION EVA-01 PALETTE & DIGITAL CARD HERO)
+   ESTILOS GENERALES DE LA APLICACIÓN
    ========================================================================== */
 
-/* Navbar */
+/* Barra de navegación */
 .navbar {
   position: sticky;
   top: 0;
@@ -101,7 +101,7 @@
   gap: 12px;
 }
 
-/* Botón de cambio de tema */
+/* Selector de tema visual */
 .theme-toggle-btn {
   width: 40px;
   height: 40px;
@@ -126,7 +126,7 @@
   background: rgba(109, 40, 217, 0.08);
 }
 
-/* Botón selector de idioma */
+/* Selector de idioma */
 .lang-toggle-btn {
   height: 40px;
   padding: 0 12px;
@@ -212,7 +212,7 @@
 }
 
 /* ==========================================================================
-   HERO SECTION & DIGITAL PROFILE CARD (INSPIRADA EN LA IMAGEN ANEXADA)
+   SECCIÓN PRINCIPAL Y TARJETA DE PRESENTACIÓN
    ========================================================================== */
 .hero-section {
   padding: 40px 0 50px;
@@ -243,7 +243,7 @@
   box-shadow: 0 0 12px rgba(34, 197, 94, 0.15);
 }
 
-/* Widescreen Profile Card Frame (Aprovecha el ancho horizontal) */
+/* Contenedor de la tarjeta de presentación */
 .profile-card-wide-frame {
   width: 100%;
   border-radius: var(--radius-card);
@@ -278,7 +278,7 @@
   box-sizing: border-box;
 }
 
-/* Left Column: Avatar & Identity */
+/* Columna izquierda: Identidad y fotografía */
 .profile-card-left-col {
   flex: 0 0 260px;
   display: flex;
@@ -382,7 +382,7 @@
   color: var(--text-muted);
 }
 
-/* Right Column: Bio, Contact Grid & Actions */
+/* Columna derecha: Semblanza profesional, cuadrícula de contacto y acciones */
 .profile-card-right-col {
   flex: 1;
   display: flex;
@@ -422,7 +422,7 @@
   line-height: 1.5;
 }
 
-/* Contact Grid: 2 Columns taking full advantage of width */
+/* Cuadrícula de contacto: Distribución de 2 columnas */
 .profile-info-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -486,7 +486,7 @@
   text-overflow: ellipsis;
 }
 
-/* Action Buttons inside wide card */
+/* Botones de acción principales */
 .hero-actions-wide {
   display: flex;
   align-items: center;
@@ -514,7 +514,7 @@
 }
 
 /* ==========================================================================
-   FILTER BAR & YOUTUBE-STYLE CHIPS (CON PALETA EVANGELION)
+   BARRA DE BÚSQUEDA Y FILTRADO POR CATEGORÍAS
    ========================================================================== */
 .filter-bar-container {
   display: flex;
@@ -598,7 +598,7 @@
   flex-wrap: wrap;
 }
 
-/* Píldoras de filtro estilo Chips de YouTube con acento EVA */
+/* Controles de filtrado por categoría */
 .filter-pill {
   padding: 8px 18px;
   border-radius: var(--radius-full);
@@ -618,7 +618,7 @@
   transform: translateY(-1px);
 }
 
-/* Chip Activo estilo YouTube: Verde neón Evangelion de alto contraste */
+/* Estado activo del filtro */
 .filter-pill.active {
   background: var(--eva-green);
   color: #08070e;
@@ -641,7 +641,7 @@
 }
 
 /* ==========================================================================
-   PROJECTS GRID & CARDS
+   CUADRÍCULA Y TARJETAS DE PROYECTOS
    ========================================================================== */
 .projects-grid {
   display: grid;
@@ -705,7 +705,7 @@
   color: #c4b5fd;
 }
 
-/* Acciones de tarjeta con botones estilo YouTube */
+/* Acciones interactivas de la tarjeta */
 .project-card-actions {
   display: flex;
   align-items: center;
@@ -733,7 +733,7 @@
   pointer-events: none;
 }
 
-/* Tip Card */
+/* Tarjeta informativa */
 .projects-tip-card {
   display: flex;
   align-items: flex-start;
@@ -770,7 +770,7 @@
   font-size: 0.88rem;
 }
 
-/* Empty State */
+/* Estado de búsqueda sin resultados */
 .empty-state {
   text-align: center;
   padding: 48px 24px;
@@ -781,7 +781,7 @@
 }
 
 /* ==========================================================================
-   SKILLS SECTION
+   SECCIÓN DE HABILIDADES TÉCNICAS
    ========================================================================== */
 .skills-grid {
   display: grid;
@@ -822,7 +822,7 @@
 }
 
 /* ==========================================================================
-   CERTIFICATIONS SECTION
+   SECCIÓN DE CERTIFICACIONES Y GRADOS ACADÉMICOS
    ========================================================================== */
 .certifications-section {
   position: relative;
@@ -991,7 +991,7 @@
 }
 
 /* ==========================================================================
-   INTERESTS & PERSONALITY SECTION
+   SECCIÓN DE INTERESES Y ACTIVIDADES PERSONALES
    ========================================================================== */
 .interests-section {
   position: relative;
@@ -1030,7 +1030,7 @@
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4), 0 0 30px rgba(34, 197, 94, 0.25);
 }
 
-/* FIX: Tarjeta de compañero michi en modo claro */
+/* Adaptación de contraste para tarjeta destacada en tema claro */
 [data-theme="light"] .interest-card-special {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 253, 244, 0.92) 100%);
   border-color: rgba(34, 197, 94, 0.45);
@@ -1177,7 +1177,7 @@
 }
 
 /* ==========================================================================
-   CONTACT SECTION
+   SECCIÓN DE CONTACTO
    ========================================================================== */
 .contact-card {
   padding: 48px;
@@ -1274,7 +1274,7 @@
 }
 
 /* ==========================================================================
-   FOOTER
+   PIE DE PÁGINA
    ========================================================================== */
 .footer-container {
   border-top: 1px solid var(--border-subtle);
@@ -1351,7 +1351,7 @@
 }
 
 /* ==========================================================================
-   RESPONSIVE
+   DISEÑO RESPONSIVO
    ========================================================================== */
 @media (max-width: 860px) {
   .navbar-links {
@@ -1408,7 +1408,7 @@
 }
 
 /* ==========================================================================
-   SCROLL TO TOP BUTTON (FLECHA FLOTANTE INFERIOR DERECHA)
+   CONTROL DE DESPLAZAMIENTO HACIA EL INICIO
    ========================================================================== */
 .scroll-to-top-btn {
   position: fixed;

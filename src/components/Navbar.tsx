@@ -61,7 +61,7 @@ export const Navbar = () => {
         </nav>
 
         <div className="navbar-actions">
-          {/* Botón de selección de idioma con ícono resaltado */}
+          {/* Control de selección de idioma */}
           <button
             onClick={toggleLanguage}
             className={`lang-toggle-btn ${language === 'en' ? 'active-en' : 'active-es'}`}
@@ -72,7 +72,7 @@ export const Navbar = () => {
             <span className="lang-code-pill">{language.toUpperCase()}</span>
           </button>
 
-          {/* Botón de cambio de tema */}
+          {/* Control de alternancia de tema visual */}
           <button
             onClick={toggleTheme}
             className="theme-toggle-btn"

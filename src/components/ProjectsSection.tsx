@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import type { ProjectItemI18n } from '../data/translations';
 import { I18N_PROJECTS, TRANSLATIONS } from '../data/translations';
-import { Search, ExternalLink, FolderGit2, X, Sparkles, Filter } from 'lucide-react';
+import { Search, ExternalLink, FolderGit2, X, Filter } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -54,7 +54,7 @@ export const ProjectsSection = () => {
   return (
     <section id="proyectos" className="section-padding projects-section">
       <div className="container">
-        {/* Section Header */}
+        {/* Encabezado de la sección */}
         <div className="section-header">
           <span className="badge badge-cyan section-tag">
             <FolderGit2 size={14} /> {t.tag}
@@ -63,7 +63,7 @@ export const ProjectsSection = () => {
           <p>{t.subtitle}</p>
         </div>
 
-        {/* Search and Filters */}
+        {/* Barra de búsqueda y filtrado por categoría */}
         <div className="filter-bar-container">
           <div className="filter-search-box">
             <Search size={18} className="search-icon" />
@@ -104,14 +104,14 @@ export const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Projects Grid */}
+        {/* Cuadrícula de proyectos */}
         {filteredProjects.length === 0 ? (
           <div className="empty-state glass-card">
             <p>
               {t.emptyTitle} "<strong>{searchQuery}</strong>". {t.emptySubtitle}
             </p>
-            <button 
-              onClick={() => { setSearchQuery(''); setActiveCategory('Todos'); }} 
+            <button
+              onClick={() => { setSearchQuery(''); setActiveCategory('Todos'); }}
               className="btn btn-secondary btn-sm"
             >
               {t.clear}
@@ -129,7 +129,7 @@ export const ProjectsSection = () => {
                 <h3 className="project-card-title">{project.title[language]}</h3>
                 <p className="project-card-desc">{project.description[language]}</p>
 
-                {/* Tags */}
+                {/* Tecnologías y etiquetas */}
                 <div className="tech-tags-list">
                   {project.tags.map((tag) => (
                     <span key={tag} className="tech-pill">
@@ -138,7 +138,7 @@ export const ProjectsSection = () => {
                   ))}
                 </div>
 
-                {/* Actions */}
+                {/* Enlaces de demostración y código fuente */}
                 <div className="project-card-actions">
                   {project.demoUrl && project.demoUrl !== '#' ? (
                     <a
@@ -172,19 +172,6 @@ export const ProjectsSection = () => {
             ))}
           </div>
         )}
-
-        {/* Tip for editing */}
-        <div className="projects-tip-card glass-card">
-          <Sparkles size={20} className="tip-icon" />
-          <div className="tip-content">
-            <h4>{language === 'es' ? '¿Cómo agregar o modificar tus proyectos?' : 'How to add or modify your projects?'}</h4>
-            <p>
-              {language === 'es'
-                ? 'Tus proyectos están organizados en el archivo src/data/translations.ts y src/data/projects.ts. Solo tienes que editar los títulos, descripciones y enlaces a tu gusto.'
-                : 'Your projects are organized in src/data/translations.ts and src/data/projects.ts. Simply customize titles, descriptions, and links as needed.'}
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

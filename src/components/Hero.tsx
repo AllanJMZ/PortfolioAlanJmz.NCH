@@ -14,17 +14,17 @@ export const Hero: React.FC = () => {
     <section id="inicio" className="hero-section">
       <div className="container hero-container">
 
-        {/* Status Pill Badge */}
+        {/* Indicador de disponibilidad */}
         <div className="hero-badge">
           <span className="pulse-dot"></span>
           <span>{t.badge} • {language === 'es' ? 'En línea' : 'Online'}</span>
         </div>
 
-        {/* Widescreen Digital Business Card (Aprovechando el ancho completo) */}
+        {/* Tarjeta de presentación digital */}
         <div className="profile-card-wide-frame">
           <div className="profile-card-glass wide">
 
-            {/* Left Side: Avatar & Identity Column */}
+            {/* Columna de identidad y fotografía */}
             <div className="profile-card-left-col">
               <div className="profile-avatar-container">
                 <div className="profile-avatar-ring">
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
                 <p className="profile-role">{t.role}</p>
               </div>
 
-              {/* Bottom Emblem Logo */}
+              {/* Distintivo de especialidad técnica */}
               <div className="profile-card-footer-logo">
                 <div className="eva-logo-symbol">
                   <span className="eva-logo-bracket">&lt;</span>
@@ -59,9 +59,9 @@ export const Hero: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Side: Bio, Contact Grid & Actions Column */}
+            {/* Columna de información profesional y enlaces de contacto */}
             <div className="profile-card-right-col">
-              {/* Bio Description */}
+              {/* Semblanza del perfil profesional */}
               <div className="profile-bio-box">
                 <div className="bio-tag-row">
                   <Sparkles size={16} className="text-eva-green" />
@@ -72,7 +72,7 @@ export const Hero: React.FC = () => {
                 </p>
               </div>
 
-              {/* Contact & Info Details (Grid de 2 columnas con Título & Cédula) */}
+              {/* Cuadrícula de contacto y credenciales */}
               <div className="profile-info-grid">
                 <div className="profile-info-row static">
                   <div className="profile-info-icon">
@@ -123,7 +123,7 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Action Buttons (Estilo cápsula de YouTube con acentos Evangelion) */}
+              {/* Botones de navegación principal */}
               <div className="hero-actions-wide">
                 <a href="#proyectos" className="btn btn-primary">
                   <FolderGit2 size={18} />
@@ -144,7 +144,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Scroll hint indicator */}
+        {/* Control de desplazamiento hacia proyectos */}
         <a href="#proyectos" className="scroll-hint" aria-label="Desplazarse a proyectos">
           <ArrowDown size={20} />
         </a>
