@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,10 +36,11 @@ export const ScrollToTop = () => {
       type="button"
       onClick={scrollToTop}
       className={`scroll-to-top-btn ${isVisible ? 'visible' : ''}`}
-      aria-label="Volver al inicio de la página"
-      title="Volver arriba"
+      aria-label={language === 'es' ? 'Volver al inicio de la página' : 'Scroll back to top'}
+      title={language === 'es' ? 'Volver arriba' : 'Back to top'}
     >
       <ArrowUp size={22} className="scroll-arrow-icon" />
     </button>
   );
 };
+

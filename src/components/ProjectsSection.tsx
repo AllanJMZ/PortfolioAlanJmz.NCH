@@ -1,21 +1,35 @@
 import { useState, useMemo } from 'react';
-import type { Project } from '../data/projects';
-import { PROJECTS_DATA } from '../data/projects';
+import type { ProjectItemI18n } from '../data/translations';
+import { I18N_PROJECTS, TRANSLATIONS } from '../data/translations';
 import { Search, ExternalLink, FolderGit2, X, Sparkles, Filter } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
+import { useLanguage } from '../context/LanguageContext';
 
 export const ProjectsSection = () => {
+  const { language } = useLanguage();
+  const t = TRANSLATIONS[language].projects;
+
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<string>('Todos');
 
-  const categories = ['Todos', 'QA Automation', 'Mobile Testing', 'API & Backend', 'Desarrollo Web'];
+  const categories = [
+    { key: 'Todos', label: t.categoryAll },
+    { key: 'QA Automation', label: 'QA Automation' },
+    { key: 'Mobile Testing', label: 'Mobile Testing' },
+    { key: 'API & Backend', label: 'API & Backend' },
+    { key: 'Desarrollo Web', label: t.categoryWebDev },
+  ];
 
   const filteredProjects = useMemo(() => {
-    return PROJECTS_DATA.filter((project) => {
+    return I18N_PROJECTS.filter((project) => {
+      const title = project.title[language].toLowerCase();
+      const desc = project.description[language].toLowerCase();
+      const query = searchQuery.toLowerCase();
+
       const matchesSearch =
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+        title.includes(query) ||
+        desc.includes(query) ||
+        project.tags.some((tag) => tag.toLowerCase().includes(query));
 
       const matchesCategory =
         activeCategory === 'Todos' ||
@@ -24,16 +38,16 @@ export const ProjectsSection = () => {
 
       return matchesSearch && matchesCategory;
     });
-  }, [searchQuery, activeCategory]);
+  }, [searchQuery, activeCategory, language]);
 
-  const getStatusBadge = (status: Project['status']) => {
+  const getStatusBadge = (status: ProjectItemI18n['status']) => {
     switch (status) {
       case 'Completado':
-        return <span className="badge badge-emerald">✓ Completado</span>;
+        return <span className="badge badge-emerald">{t.statusCompleted}</span>;
       case 'En Desarrollo':
-        return <span className="badge badge-cyan"><span className="pulse-dot"></span> En Desarrollo</span>;
+        return <span className="badge badge-cyan"><span className="pulse-dot"></span> {t.statusInDev}</span>;
       case 'Próximamente':
-        return <span className="badge badge-purple">⏳ Próximamente</span>;
+        return <span className="badge badge-purple">{t.statusUpcoming}</span>;
     }
   };
 
@@ -43,12 +57,10 @@ export const ProjectsSection = () => {
         {/* Section Header */}
         <div className="section-header">
           <span className="badge badge-cyan section-tag">
-            <FolderGit2 size={14} /> Catálogo de Proyectos
+            <FolderGit2 size={14} /> {t.tag}
           </span>
-          <h2>Proyectos &amp; Frameworks</h2>
-          <p>
-            Arquitecturas de automatización, suites de pruebas para Web, Móviles y validación profunda de APIs.
-          </p>
+          <h2>{t.title}</h2>
+          <p>{t.subtitle}</p>
         </div>
 
         {/* Search and Filters */}
@@ -57,7 +69,7 @@ export const ProjectsSection = () => {
             <Search size={18} className="search-icon" />
             <input
               type="text"
-              placeholder="Buscar por tecnología (Playwright, Appium, TypeScript, Postman, SQL...)"
+              placeholder={t.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="search-input"
@@ -66,7 +78,7 @@ export const ProjectsSection = () => {
               <button
                 onClick={() => setSearchQuery('')}
                 className="clear-search-btn"
-                title="Limpiar búsqueda"
+                title={t.clear}
               >
                 <X size={16} />
               </button>
@@ -76,16 +88,16 @@ export const ProjectsSection = () => {
           <div className="filter-pills-row">
             <div className="filter-label-group">
               <Filter size={15} />
-              <span>Categoría:</span>
+              <span>{language === 'es' ? 'Categoría:' : 'Category:'}</span>
             </div>
             <div className="filter-pills">
               {categories.map((cat) => (
                 <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`filter-pill ${activeCategory === cat ? 'active' : ''}`}
+                  key={cat.key}
+                  onClick={() => setActiveCategory(cat.key)}
+                  className={`filter-pill ${activeCategory === cat.key ? 'active' : ''}`}
                 >
-                  {cat}
+                  {cat.label}
                 </button>
               ))}
             </div>
@@ -95,12 +107,14 @@ export const ProjectsSection = () => {
         {/* Projects Grid */}
         {filteredProjects.length === 0 ? (
           <div className="empty-state glass-card">
-            <p>No se encontraron proyectos con el término "<strong>{searchQuery}</strong>".</p>
+            <p>
+              {t.emptyTitle} "<strong>{searchQuery}</strong>". {t.emptySubtitle}
+            </p>
             <button 
               onClick={() => { setSearchQuery(''); setActiveCategory('Todos'); }} 
               className="btn btn-secondary btn-sm"
             >
-              Restablecer filtros
+              {t.clear}
             </button>
           </div>
         ) : (
@@ -112,8 +126,8 @@ export const ProjectsSection = () => {
                   {getStatusBadge(project.status)}
                 </div>
 
-                <h3 className="project-card-title">{project.title}</h3>
-                <p className="project-card-desc">{project.description}</p>
+                <h3 className="project-card-title">{project.title[language]}</h3>
+                <p className="project-card-desc">{project.description[language]}</p>
 
                 {/* Tags */}
                 <div className="tech-tags-list">
@@ -124,7 +138,7 @@ export const ProjectsSection = () => {
                   ))}
                 </div>
 
-                {/* Actions with YouTube-style button design */}
+                {/* Actions */}
                 <div className="project-card-actions">
                   {project.demoUrl && project.demoUrl !== '#' ? (
                     <a
@@ -133,12 +147,12 @@ export const ProjectsSection = () => {
                       rel="noopener noreferrer"
                       className="btn btn-primary btn-sm flex-1"
                     >
-                      <span>Ver Demo</span>
+                      <span>{t.btnDemo}</span>
                       <ExternalLink size={15} />
                     </a>
                   ) : (
                     <button className="btn btn-secondary btn-sm flex-1 btn-disabled" disabled>
-                      <span>Demo Próximamente</span>
+                      <span>{t.statusUpcoming}</span>
                     </button>
                   )}
 
@@ -148,7 +162,7 @@ export const ProjectsSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-secondary btn-sm icon-only"
-                      title="Ver Repositorio en GitHub"
+                      title={t.btnCode}
                     >
                       <GithubIcon size={16} />
                     </a>
@@ -163,9 +177,11 @@ export const ProjectsSection = () => {
         <div className="projects-tip-card glass-card">
           <Sparkles size={20} className="tip-icon" />
           <div className="tip-content">
-            <h4>¿Cómo agregar o modificar tus proyectos?</h4>
+            <h4>{language === 'es' ? '¿Cómo agregar o modificar tus proyectos?' : 'How to add or modify your projects?'}</h4>
             <p>
-              Tus proyectos están organizados en el archivo <code>src/data/projects.ts</code>. Solo tienes que abrir ese archivo y editar los títulos, descripciones y enlaces a tu gusto.
+              {language === 'es'
+                ? 'Tus proyectos están organizados en el archivo src/data/translations.ts y src/data/projects.ts. Solo tienes que editar los títulos, descripciones y enlaces a tu gusto.'
+                : 'Your projects are organized in src/data/translations.ts and src/data/projects.ts. Simply customize titles, descriptions, and links as needed.'}
             </p>
           </div>
         </div>
@@ -173,3 +189,4 @@ export const ProjectsSection = () => {
     </section>
   );
 };
+

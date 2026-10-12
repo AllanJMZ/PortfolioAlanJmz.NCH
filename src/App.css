@@ -126,6 +126,87 @@
   background: rgba(109, 40, 217, 0.08);
 }
 
+/* Botón selector de idioma */
+.lang-toggle-btn {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border-medium);
+  background: rgba(139, 92, 246, 0.12);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-heading);
+  position: relative;
+}
+
+.lang-toggle-btn .lang-icon {
+  color: var(--eva-green);
+  filter: drop-shadow(0 0 6px var(--eva-green-glow));
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.lang-toggle-btn .lang-code-pill {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: rgba(139, 92, 246, 0.22);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.lang-toggle-btn:hover {
+  background: rgba(139, 92, 246, 0.25);
+  border-color: var(--eva-green);
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(34, 197, 94, 0.35);
+}
+
+.lang-toggle-btn:hover .lang-icon {
+  transform: rotate(15deg) scale(1.1);
+  filter: drop-shadow(0 0 10px var(--eva-green-neon));
+}
+
+.lang-toggle-btn.active-en {
+  border-color: var(--eva-green);
+  background: rgba(34, 197, 94, 0.16);
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.32);
+}
+
+.lang-toggle-btn.active-en .lang-icon {
+  color: var(--eva-green-neon);
+  filter: drop-shadow(0 0 8px var(--eva-green-neon));
+}
+
+.lang-toggle-btn.active-en .lang-code-pill {
+  background: var(--eva-green);
+  color: #08070e;
+}
+
+.lang-toggle-btn.active-es .lang-code-pill {
+  background: var(--eva-purple);
+  color: #ffffff;
+}
+
+[data-theme="light"] .lang-toggle-btn {
+  background: rgba(109, 40, 217, 0.08);
+  border-color: rgba(109, 40, 217, 0.22);
+}
+
+[data-theme="light"] .lang-toggle-btn .lang-icon {
+  color: var(--eva-green);
+}
+
+[data-theme="light"] .lang-toggle-btn.active-en {
+  background: rgba(22, 163, 74, 0.12);
+  border-color: var(--eva-green);
+}
+
 .nav-gh-btn {
   display: inline-flex;
 }
@@ -867,6 +948,42 @@
   padding: 6px 0;
 }
 
+.cert-degree-card {
+  grid-column: 1 / -1;
+  border-color: rgba(34, 197, 94, 0.45);
+  background: linear-gradient(145deg, rgba(20, 16, 36, 0.9) 0%, rgba(14, 25, 20, 0.85) 100%);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.16);
+}
+
+[data-theme="light"] .cert-degree-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 253, 244, 0.95) 100%);
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.14);
+}
+
+.cert-icon-wrapper.degree-icon {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: var(--eva-green);
+  box-shadow: 0 0 14px var(--eva-green-glow);
+}
+
+.cert-degree-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+.cert-verified-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--eva-green);
+  padding: 4px 0;
+}
+
 /* ==========================================================================
    INTERESTS & PERSONALITY SECTION
    ========================================================================== */
@@ -905,6 +1022,24 @@
 .interest-card-special:hover {
   border-color: var(--eva-green);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4), 0 0 30px rgba(34, 197, 94, 0.25);
+}
+
+/* FIX: Tarjeta de compañero michi en modo claro */
+[data-theme="light"] .interest-card-special {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 253, 244, 0.92) 100%);
+  border-color: rgba(34, 197, 94, 0.45);
+  box-shadow: 0 6px 22px rgba(34, 197, 94, 0.15), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .interest-card-special:hover {
+  border-color: var(--eva-green);
+  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.25);
+}
+
+[data-theme="light"] .interest-avatar-wrapper {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: var(--eva-green);
+  box-shadow: 0 0 14px rgba(34, 197, 94, 0.25);
 }
 
 .interest-card-top {

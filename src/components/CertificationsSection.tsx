@@ -1,25 +1,55 @@
 import React from 'react';
-import { Award, ExternalLink, CheckCircle2, Clock, ShieldCheck } from 'lucide-react';
-import { CERTIFICATIONS_DATA } from '../data/projects';
+import { Award, ExternalLink, CheckCircle2, Clock, ShieldCheck, GraduationCap } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS, I18N_CERTIFICATIONS } from '../data/translations';
 
 export const CertificationsSection: React.FC = () => {
+  const { language } = useLanguage();
+  const t = TRANSLATIONS[language].certifications;
+
   return (
     <section id="certificaciones" className="section-padding certifications-section">
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
           <span className="badge badge-emerald section-tag">
-            <Award size={14} /> Credenciales &amp; Certificaciones
+            <Award size={14} /> {t.tag}
           </span>
-          <h2>Certificaciones Oficiales</h2>
-          <p>
-            Acreditaciones internacionales y certificaciones técnicas que validan mis competencias en QA Automation, Cloud y metodologías ágiles.
-          </p>
+          <h2>{t.title}</h2>
+          <p>{t.subtitle}</p>
         </div>
 
         {/* Certifications Grid */}
         <div className="certifications-grid">
-          {CERTIFICATIONS_DATA.map((cert) => {
+          {/* Tarjeta destacada de Título Universitario & Cédula Profesional */}
+          <div className="glass-card cert-card cert-card-featured cert-degree-card">
+            <div className="cert-card-top">
+              <div className="cert-icon-wrapper degree-icon">
+                <GraduationCap size={24} className="cert-icon verified" />
+              </div>
+
+              <span className="badge badge-emerald cert-status-badge">
+                <CheckCircle2 size={12} /> {t.degreeCard.status}
+              </span>
+            </div>
+
+            <div className="cert-card-body">
+              <span className="cert-tag">{t.degreeCard.tag}</span>
+              <h3 className="cert-title">{t.degreeCard.title}</h3>
+              <p className="cert-issuer">{t.degreeCard.institution}</p>
+              <p className="cert-degree-desc">{t.degreeCard.description}</p>
+            </div>
+
+            <div className="cert-card-footer">
+              <div className="cert-verified-pill">
+                <ShieldCheck size={14} className="text-eva-green" />
+                <span>{language === 'es' ? 'Cédula Profesional Registrada' : 'Registered Professional License'}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Resto de Certificaciones */}
+          {I18N_CERTIFICATIONS.map((cert) => {
             const isVerified = cert.status === 'Verificada';
 
             return (
@@ -39,18 +69,18 @@ export const CertificationsSection: React.FC = () => {
                   <span className={`badge ${isVerified ? 'badge-emerald' : 'badge-purple'} cert-status-badge`}>
                     {isVerified ? (
                       <>
-                        <CheckCircle2 size={12} /> Verificada
+                        <CheckCircle2 size={12} /> {t.verified}
                       </>
                     ) : (
                       <>
-                        <Clock size={12} /> Pendiente de carga
+                        <Clock size={12} /> {t.pending}
                       </>
                     )}
                   </span>
                 </div>
 
                 <div className="cert-card-body">
-                  <span className="cert-tag">{cert.tag}</span>
+                  <span className="cert-tag">{cert.tag[language]}</span>
                   <h3 className="cert-title">{cert.title}</h3>
                   <p className="cert-issuer">{cert.issuer}</p>
                 </div>
@@ -63,13 +93,13 @@ export const CertificationsSection: React.FC = () => {
                       rel="noopener noreferrer"
                       className="btn btn-secondary btn-sm cert-action-btn"
                     >
-                      <span>Ver Credencial Oficial</span>
+                      <span>{t.btnView}</span>
                       <ExternalLink size={14} />
                     </a>
                   ) : (
                     <div className="cert-pending-tag">
                       <Clock size={13} />
-                      <span>{cert.notes || 'En proceso de carga'}</span>
+                      <span>{cert.notes?.[language] || t.pendingNotes}</span>
                     </div>
                   )}
                 </div>
@@ -81,3 +111,4 @@ export const CertificationsSection: React.FC = () => {
     </section>
   );
 };
+

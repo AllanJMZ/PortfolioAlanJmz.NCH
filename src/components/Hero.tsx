@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import { Mail, MapPin, FolderGit2, Sparkles, Award, GraduationCap, ArrowDown } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 import { PERSONAL_INFO } from '../data/projects';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
 
 export const Hero: React.FC = () => {
   const [imgError, setImgError] = useState(false);
+  const { language } = useLanguage();
+  const t = TRANSLATIONS[language].hero;
 
   return (
     <section id="inicio" className="hero-section">
@@ -13,20 +17,20 @@ export const Hero: React.FC = () => {
         {/* Status Pill Badge */}
         <div className="hero-badge">
           <span className="pulse-dot"></span>
-          <span>Disponible para proyectos • En línea</span>
+          <span>{t.badge} • {language === 'es' ? 'En línea' : 'Online'}</span>
         </div>
 
         {/* Widescreen Digital Business Card (Aprovechando el ancho completo) */}
         <div className="profile-card-wide-frame">
           <div className="profile-card-glass wide">
-            
+
             {/* Left Side: Avatar & Identity Column */}
             <div className="profile-card-left-col">
               <div className="profile-avatar-container">
                 <div className="profile-avatar-ring">
                   {!imgError ? (
                     <img
-                      src="./avatar.png"
+                      src="./credencial.jpg"
                       alt={PERSONAL_INFO.name}
                       className="profile-avatar-img"
                       onError={() => setImgError(true)}
@@ -41,17 +45,17 @@ export const Hero: React.FC = () => {
 
               <div className="profile-identity">
                 <h1 className="profile-name">{PERSONAL_INFO.name}</h1>
-                <p className="profile-role">{PERSONAL_INFO.title}</p>
+                <p className="profile-role">{t.role}</p>
               </div>
 
               {/* Bottom Emblem Logo */}
               <div className="profile-card-footer-logo">
                 <div className="eva-logo-symbol">
                   <span className="eva-logo-bracket">&lt;</span>
-                  <span className="eva-logo-core">EVA</span>
+                  <span className="eva-logo-core">{t.coreTag}</span>
                   <span className="eva-logo-bracket">/&gt;</span>
                 </div>
-                <span className="eva-logo-caption">QA AUTOMATION &amp; SDET</span>
+                <span className="eva-logo-caption">{t.coreCaption}</span>
               </div>
             </div>
 
@@ -61,49 +65,49 @@ export const Hero: React.FC = () => {
               <div className="profile-bio-box">
                 <div className="bio-tag-row">
                   <Sparkles size={16} className="text-eva-green" />
-                  <span>Sobre Mí</span>
+                  <span>{t.aboutTag}</span>
                 </div>
                 <p className="profile-bio-text">
-                  {PERSONAL_INFO.bio}
+                  {t.bio}
                 </p>
               </div>
 
-              {/* Contact & Info Details (Grid de 2 columnas aprovechando el ancho) */}
+              {/* Contact & Info Details (Grid de 2 columnas con Título & Cédula) */}
               <div className="profile-info-grid">
                 <div className="profile-info-row static">
                   <div className="profile-info-icon">
                     <GraduationCap size={18} />
                   </div>
                   <div className="profile-info-content">
-                    <span className="profile-info-label">Educación</span>
-                    <span className="profile-info-text">Lic. en Informática (UNAM)</span>
+                    <span className="profile-info-label">{t.educationLabel}</span>
+                    <span className="profile-info-text">{t.educationValue}</span>
                   </div>
                 </div>
 
-                <a 
-                  href={`mailto:${PERSONAL_INFO.email}`} 
+                <a
+                  href={`mailto:${PERSONAL_INFO.email}`}
                   className="profile-info-row"
                 >
                   <div className="profile-info-icon">
                     <Mail size={18} />
                   </div>
                   <div className="profile-info-content">
-                    <span className="profile-info-label">Correo</span>
+                    <span className="profile-info-label">{t.emailLabel}</span>
                     <span className="profile-info-text">{PERSONAL_INFO.email}</span>
                   </div>
                 </a>
 
-                <a 
-                  href={PERSONAL_INFO.githubUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href={PERSONAL_INFO.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="profile-info-row"
                 >
                   <div className="profile-info-icon">
                     <GithubIcon size={18} />
                   </div>
                   <div className="profile-info-content">
-                    <span className="profile-info-label">GitHub</span>
+                    <span className="profile-info-label">{t.githubLabel}</span>
                     <span className="profile-info-text">github.com/{PERSONAL_INFO.githubUser}</span>
                   </div>
                 </a>
@@ -113,8 +117,8 @@ export const Hero: React.FC = () => {
                     <MapPin size={18} />
                   </div>
                   <div className="profile-info-content">
-                    <span className="profile-info-label">Ubicación</span>
-                    <span className="profile-info-text">{PERSONAL_INFO.location}</span>
+                    <span className="profile-info-label">{t.locationLabel}</span>
+                    <span className="profile-info-text">{t.locationValue}</span>
                   </div>
                 </div>
               </div>
@@ -123,17 +127,17 @@ export const Hero: React.FC = () => {
               <div className="hero-actions-wide">
                 <a href="#proyectos" className="btn btn-primary">
                   <FolderGit2 size={18} />
-                  <span>Ver Proyectos</span>
+                  <span>{t.btnProjects}</span>
                 </a>
 
                 <a href="#certificaciones" className="btn btn-secondary">
                   <Award size={18} />
-                  <span>Certificaciones</span>
+                  <span>{t.btnCertifications}</span>
                 </a>
 
                 <a href="#contacto" className="btn btn-secondary">
                   <Mail size={18} />
-                  <span>Contactar</span>
+                  <span>{t.btnContact}</span>
                 </a>
               </div>
             </div>

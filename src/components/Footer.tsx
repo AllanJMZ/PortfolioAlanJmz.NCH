@@ -1,8 +1,13 @@
 import { GithubIcon } from './BrandIcons';
 import { PERSONAL_INFO } from '../data/projects';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
 
 export const Footer = () => {
   const year = new Date().getFullYear();
+  const { language } = useLanguage();
+  const t = TRANSLATIONS[language].footer;
+  const nav = TRANSLATIONS[language].nav;
 
   return (
     <footer className="footer-container">
@@ -15,17 +20,17 @@ export const Footer = () => {
             <span>{PERSONAL_INFO.name}</span>
           </div>
           <p className="footer-tagline">
-            QA Automation Lead &amp; SDET • Portafolio Profesional • Preparado para GitHub Pages
+            {t.tagline}
           </p>
         </div>
 
         <div className="footer-links">
-          <a href="#inicio">Inicio</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#habilidades">Habilidades</a>
-          <a href="#certificaciones">Certificaciones</a>
-          <a href="#intereses">Intereses</a>
-          <a href="#contacto">Contacto</a>
+          <a href="#inicio">{nav.home}</a>
+          <a href="#proyectos">{nav.projects}</a>
+          <a href="#habilidades">{nav.skills}</a>
+          <a href="#certificaciones">{nav.certifications}</a>
+          <a href="#intereses">{nav.interests}</a>
+          <a href="#contacto">{nav.contact}</a>
         </div>
 
         <div className="footer-right">
@@ -38,9 +43,10 @@ export const Footer = () => {
           >
             <GithubIcon size={18} />
           </a>
-          <span className="footer-copy">© {year} Todos los derechos reservados.</span>
+          <span className="footer-copy">© {year} {t.rights}</span>
         </div>
       </div>
     </footer>
   );
 };
+

@@ -1,21 +1,23 @@
 import { Mail, MessageSquare, ArrowUpRight } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './BrandIcons';
 import { PERSONAL_INFO } from '../data/projects';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
 
 export const ContactSection = () => {
+  const { language } = useLanguage();
+  const t = TRANSLATIONS[language].contact;
+
   return (
     <section id="contacto" className="section-padding contact-section">
       <div className="container">
         <div className="contact-card glass-card">
           <div className="contact-header">
             <span className="badge badge-emerald section-tag">
-              <MessageSquare size={14} /> ¿Hablamos?
+              <MessageSquare size={14} /> {t.tag}
             </span>
-            <h2>Conectemos</h2>
-            <p>
-              ¿Tienes una propuesta, un proyecto en mente o te gustaría colaborar? 
-              Puedes encontrarme a través de estos canales:
-            </p>
+            <h2>{t.title}</h2>
+            <p>{t.subtitle}</p>
           </div>
 
           <div className="contact-links-grid">
@@ -27,7 +29,7 @@ export const ContactSection = () => {
                 <Mail size={22} className="contact-icon email" />
               </div>
               <div className="contact-text">
-                <span className="contact-label">Correo Electrónico</span>
+                <span className="contact-label">{t.emailLabel}</span>
                 <span className="contact-value">{PERSONAL_INFO.email}</span>
               </div>
               <ArrowUpRight size={18} className="contact-arrow" />
@@ -43,7 +45,7 @@ export const ContactSection = () => {
                 <GithubIcon size={22} className="contact-icon github" />
               </div>
               <div className="contact-text">
-                <span className="contact-label">GitHub</span>
+                <span className="contact-label">{t.githubLabel}</span>
                 <span className="contact-value">github.com/{PERSONAL_INFO.githubUser}</span>
               </div>
               <ArrowUpRight size={18} className="contact-arrow" />
@@ -59,7 +61,7 @@ export const ContactSection = () => {
                 <LinkedinIcon size={22} className="contact-icon linkedin" />
               </div>
               <div className="contact-text">
-                <span className="contact-label">LinkedIn</span>
+                <span className="contact-label">{t.linkedinLabel}</span>
                 <span className="contact-value">allan-jimenez</span>
               </div>
               <ArrowUpRight size={18} className="contact-arrow" />
@@ -70,3 +72,4 @@ export const ContactSection = () => {
     </section>
   );
 };
+
