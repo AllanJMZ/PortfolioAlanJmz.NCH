@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ExternalLink, CheckCircle2, Clock, ShieldCheck, GraduationCap } from 'lucide-react';
+import { ExternalLink, CheckCircle2, Clock, ShieldCheck, GraduationCap } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS, I18N_CERTIFICATIONS } from '../data/translations';
 
@@ -8,72 +8,73 @@ export const CertificationsSection: React.FC = () => {
   const t = TRANSLATIONS[language].certifications;
 
   return (
-    <section id="certificaciones" className="section-padding certifications-section">
+    <section id="certificaciones" className="section-padding section-band-alt certifications-section">
       <div className="container">
-        {/* Encabezado de la sección */}
-        <div className="section-header">
-          <span className="badge badge-emerald section-tag">
-            <Award size={14} /> {t.tag}
-          </span>
-          <h2>{t.title}</h2>
-          <p>{t.subtitle}</p>
+        {/* Encabezado editorial */}
+        <div className="editorial-header">
+          <div className="editorial-header-main">
+            <span className="section-eyebrow">03 / {t.tag}</span>
+            <h2>{t.title}</h2>
+          </div>
+          <p className="editorial-header-desc">{t.subtitle}</p>
         </div>
 
-        {/* Cuadrícula de certificaciones y grados académicos */}
-        <div className="certifications-grid">
-          {/* Acreditación de grado académico y cédula profesional */}
-          <div className="glass-card cert-card cert-card-featured cert-degree-card">
-            <div className="cert-card-top">
-              <div className="cert-icon-wrapper degree-icon">
-                <GraduationCap size={24} className="cert-icon verified" />
-              </div>
-
-              <span className="badge badge-emerald cert-status-badge">
-                <CheckCircle2 size={12} /> {t.degreeCard.status}
-              </span>
+        {/* Banner académico universitario */}
+        <div className="surface-card degree-banner">
+          <div className="degree-banner-left">
+            <div className="cert-icon-wrapper degree-icon">
+              <GraduationCap size={24} className="cert-icon verified" aria-hidden="true" />
             </div>
-
-            <div className="cert-card-body">
+            <div className="degree-banner-meta">
               <span className="cert-tag">{t.degreeCard.tag}</span>
-              <h3 className="cert-title">{t.degreeCard.title}</h3>
-              <p className="cert-issuer">{t.degreeCard.institution}</p>
-              <p className="cert-degree-desc">{t.degreeCard.description}</p>
-            </div>
-
-            <div className="cert-card-footer">
-              <div className="cert-verified-pill">
-                <ShieldCheck size={14} className="text-eva-green" />
-                <span>{language === 'es' ? 'Cédula Profesional Registrada' : 'Registered Professional License'}</span>
-              </div>
+              <span className="status-tag status-emerald">
+                <CheckCircle2 size={12} aria-hidden="true" />
+                <span>{t.degreeCard.status}</span>
+              </span>
             </div>
           </div>
 
-          {/* Certificaciones técnicas y profesionales */}
+          <div className="degree-banner-body">
+            <h3 className="degree-title">{t.degreeCard.title}</h3>
+            <p className="cert-issuer">{t.degreeCard.institution}</p>
+            <p className="cert-degree-desc">{t.degreeCard.description}</p>
+          </div>
+
+          <div className="degree-banner-seal">
+            <ShieldCheck size={16} className="text-accent-green" aria-hidden="true" />
+            <span>{language === 'es' ? 'Cédula Profesional Registrada' : 'Registered Professional License'}</span>
+          </div>
+        </div>
+
+        {/* Rejilla balanceada 3×2 de certificaciones */}
+        <div className="certifications-grid">
           {I18N_CERTIFICATIONS.map((cert) => {
             const isVerified = cert.status === 'Verificada';
 
             return (
               <div
                 key={cert.id}
-                className={`glass-card cert-card ${cert.featured ? 'cert-card-featured' : ''} ${!isVerified ? 'cert-card-pending' : ''}`}
+                className={`surface-card cert-card ${cert.featured ? 'cert-card-featured' : ''} ${!isVerified ? 'cert-card-pending' : ''}`}
               >
                 <div className="cert-card-top">
                   <div className="cert-icon-wrapper">
                     {isVerified ? (
-                      <ShieldCheck size={24} className="cert-icon verified" />
+                      <ShieldCheck size={20} className="cert-icon verified" aria-hidden="true" />
                     ) : (
-                      <Clock size={24} className="cert-icon pending" />
+                      <Clock size={20} className="cert-icon pending" aria-hidden="true" />
                     )}
                   </div>
 
-                  <span className={`badge ${isVerified ? 'badge-emerald' : 'badge-purple'} cert-status-badge`}>
+                  <span className={`status-tag ${isVerified ? 'status-emerald' : 'status-violet'}`}>
                     {isVerified ? (
                       <>
-                        <CheckCircle2 size={12} /> {t.verified}
+                        <CheckCircle2 size={12} aria-hidden="true" />
+                        <span>{t.verified}</span>
                       </>
                     ) : (
                       <>
-                        <Clock size={12} /> {t.pending}
+                        <Clock size={12} aria-hidden="true" />
+                        <span>{t.pending}</span>
                       </>
                     )}
                   </span>
@@ -94,11 +95,16 @@ export const CertificationsSection: React.FC = () => {
                       className="btn btn-secondary btn-sm cert-action-btn"
                     >
                       <span>{t.btnView}</span>
-                      <ExternalLink size={14} />
+                      <ExternalLink size={14} aria-hidden="true" />
                     </a>
+                  ) : isVerified ? (
+                    <div className="cert-verified-pill cert-verified-note">
+                      <ShieldCheck size={14} className="text-accent-green" aria-hidden="true" />
+                      <span>{cert.notes?.[language] || t.verifiedNoLink}</span>
+                    </div>
                   ) : (
                     <div className="cert-pending-tag">
-                      <Clock size={13} />
+                      <Clock size={13} aria-hidden="true" />
                       <span>{cert.notes?.[language] || t.pendingNotes}</span>
                     </div>
                   )}
@@ -111,4 +117,3 @@ export const CertificationsSection: React.FC = () => {
     </section>
   );
 };
-

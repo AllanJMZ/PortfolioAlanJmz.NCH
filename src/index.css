@@ -4,77 +4,78 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace;
 
   /* ==========================================================================
-     EVANGELION EVA-01 COLOR PALETTE (Dark Mode Default)
+     UNIT-01 INK & EMERALD PALETTE (Dark Mode Default — Layered & Crisp)
      ========================================================================== */
-  --bg-primary: #08070e;
-  --bg-secondary: #0e0a1a;
-  --bg-card: rgba(19, 15, 34, 0.8);
-  --bg-card-hover: rgba(28, 22, 50, 0.9);
-  --bg-card-glass: rgba(14, 10, 26, 0.85);
+  --bg-primary: #0a0b10;
+  --bg-secondary: #141724;
+  --bg-surface: #1b1f30;
+  --bg-surface-hover: #22273c;
+  --bg-elevated: #252a40;
+  --bg-nav: rgba(10, 11, 16, 0.92);
 
-  --border-subtle: rgba(139, 92, 246, 0.15);
-  --border-medium: rgba(139, 92, 246, 0.25);
-  --border-glow: rgba(34, 197, 94, 0.4);
+  --border-subtle: #2b3047;
+  --border-medium: #3d4262;
+  --border-strong: #565b84;
 
-  --text-primary: #f8fafc;
-  --text-secondary: #a78bfa;
-  --text-muted: #7c7299;
-  --text-inverse: #08070e;
+  --text-primary: #f4f5f9;
+  --text-secondary: #c0bdd4;
+  --text-muted: #9895b4;
+  --text-inverse: #0a0b10;
 
-  /* EVA-01 Accents */
-  --eva-purple: #8b5cf6;
-  --eva-purple-dark: #6d28d9;
-  --eva-purple-glow: rgba(139, 92, 246, 0.45);
+  /* Disciplined Purple & Emerald Accents (No Neon Glow) */
+  --accent-purple: #a594f9;
+  --accent-purple-deep: #5d48c4;
+  --accent-purple-soft: rgba(165, 148, 249, 0.14);
 
-  --eva-green: #22c55e;
-  --eva-green-neon: #10e052;
-  --eva-green-glow: rgba(34, 197, 94, 0.45);
+  --accent-green: #38b87c;
+  --accent-green-hover: #45c78b;
+  --accent-green-soft: rgba(56, 184, 124, 0.14);
+  --accent-green-ink: #081810;
 
-  --eva-orange: #f97316;
+  --shadow-sm: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 12px -4px rgba(0, 0, 0, 0.45);
+  --shadow-md: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 14px 32px -10px rgba(0, 0, 0, 0.65);
+  --shadow-lg: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 24px 52px -14px rgba(0, 0, 0, 0.78);
+  --band-inset-shadow: inset 0 16px 32px -24px rgba(0, 0, 0, 0.65), inset 0 -16px 32px -24px rgba(0, 0, 0, 0.45);
 
-  /* EVA Sync Gradient */
-  --gradient-eva: linear-gradient(135deg, #8b5cf6 0%, #22c55e 100%);
-  --gradient-eva-soft: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(34, 197, 94, 0.2) 100%);
-  --gradient-card-border: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(34, 197, 94, 0.35));
-
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 20px 40px -8px rgba(0, 0, 0, 0.7);
-  --shadow-purple-glow: 0 0 25px rgba(139, 92, 246, 0.3);
-  --shadow-green-glow: 0 0 25px rgba(34, 197, 94, 0.3);
-
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-card: 26px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --radius-full: 9999px;
 
-  --transition-fast: 0.15s ease;
+  --transition-fast: 0.16s ease;
   --transition-normal: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-theme="light"] {
-  --bg-primary: #f6f5fa;
-  --bg-secondary: #eeeaf5;
-  --bg-card: rgba(255, 255, 255, 0.92);
-  --bg-card-hover: #ffffff;
-  --bg-card-glass: rgba(255, 255, 255, 0.9);
+  --bg-primary: #fafafe;
+  --bg-secondary: #eae7f5;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #ffffff;
+  --bg-elevated: #f1effa;
+  --bg-nav: rgba(250, 250, 254, 0.92);
 
-  --border-subtle: rgba(109, 40, 217, 0.12);
-  --border-medium: rgba(109, 40, 217, 0.2);
-  --border-glow: rgba(34, 197, 94, 0.4);
+  --border-subtle: #d3cee3;
+  --border-medium: #b9b2d0;
+  --border-strong: #948bb5;
 
-  --text-primary: #150f28;
-  --text-secondary: #5b4a78;
-  --text-muted: #7e7196;
-  --text-inverse: #f8fafc;
+  --text-primary: #161423;
+  --text-secondary: #433e59;
+  --text-muted: #5a5472;
+  --text-inverse: #ffffff;
 
-  --eva-purple: #7c3aed;
-  --eva-green: #16a34a;
+  --accent-purple: #523bb3;
+  --accent-purple-deep: #4831a6;
+  --accent-purple-soft: rgba(82, 59, 179, 0.1);
 
-  --shadow-sm: 0 2px 8px rgba(109, 40, 217, 0.06);
-  --shadow-md: 0 8px 24px -4px rgba(109, 40, 217, 0.1);
-  --shadow-lg: 0 20px 40px -8px rgba(109, 40, 217, 0.14);
+  --accent-green: #167245;
+  --accent-green-hover: #125c38;
+  --accent-green-soft: rgba(22, 114, 69, 0.1);
+  --accent-green-ink: #ffffff;
+
+  --shadow-sm: 0 1px 2px rgba(22, 20, 35, 0.06), 0 6px 16px -6px rgba(22, 20, 35, 0.1);
+  --shadow-md: 0 4px 10px rgba(22, 20, 35, 0.07), 0 16px 32px -12px rgba(22, 20, 35, 0.16);
+  --shadow-lg: 0 22px 48px -12px rgba(22, 20, 35, 0.22);
+  --band-inset-shadow: inset 0 14px 26px -22px rgba(22, 20, 35, 0.14), inset 0 -14px 26px -22px rgba(22, 20, 35, 0.1);
 }
 
 * {
@@ -93,45 +94,39 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-/* Background Ambient Glow (Evangelion EVA-01 purple & green lighting) */
-body::before {
-  content: '';
-  position: fixed;
-  top: -120px;
-  left: 30%;
-  width: 750px;
-  height: 500px;
-  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.18) 0%, rgba(34, 197, 94, 0.08) 50%, transparent 75%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  bottom: 0;
-  right: -80px;
-  width: 600px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(34, 197, 94, 0.09) 0%, rgba(139, 92, 246, 0.06) 45%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
 #root {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
+}
+
+section[id] {
+  scroll-margin-top: 76px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 3px;
 }
 
 /* Typography */
@@ -140,208 +135,193 @@ h1, h2, h3, h4 {
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.025em;
-  line-height: 1.2;
+  line-height: 1.18;
 }
 
-.eva-gradient-text {
-  background: var(--gradient-eva);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.eva-green-text {
-  color: var(--eva-green);
-}
-
-.eva-purple-text {
-  color: var(--eva-purple);
+.text-accent-green {
+  color: var(--accent-green);
 }
 
 /* ==========================================================================
-   SISTEMA DE BOTONES DE ACCIÓN
+   SISTEMA DE CONTROLES Y BOTONES
    ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 24px;
+  min-height: 44px;
+  padding: 10px 20px;
   font-family: var(--font-body);
   font-size: 0.92rem;
   font-weight: 700;
-  border-radius: var(--radius-full); /* Borde redondeado estilo píldora */
+  border-radius: var(--radius-md);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* Botón principal de alto contraste */
 .btn-primary {
-  background: var(--eva-green);
-  color: #08070e !important;
-  font-weight: 800;
-  border: 1px solid var(--eva-green);
-  box-shadow: 0 4px 16px var(--eva-green-glow);
+  background: var(--accent-green);
+  color: var(--accent-green-ink) !important;
+  border-color: var(--accent-green);
 }
 
 .btn-primary:hover {
-  background: var(--eva-green-neon);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(34, 197, 94, 0.6);
+  background: var(--accent-green-hover);
+  border-color: var(--accent-green-hover);
+  transform: translateY(-1px);
 }
 
-/* Botón secundario con fondo traslúcido */
 .btn-secondary {
-  background: rgba(139, 92, 246, 0.12);
+  background: var(--bg-surface);
   color: var(--text-primary) !important;
-  border: 1px solid rgba(139, 92, 246, 0.35);
-  backdrop-filter: blur(10px);
+  border-color: var(--border-medium);
 }
 
 .btn-secondary:hover {
-  background: rgba(139, 92, 246, 0.22);
-  border-color: var(--eva-purple);
-  box-shadow: var(--shadow-purple-glow);
-  transform: translateY(-2px);
+  background: var(--bg-surface-hover);
+  border-color: var(--accent-purple);
+  transform: translateY(-1px);
 }
 
-[data-theme="light"] .btn-secondary {
-  background: rgba(109, 40, 217, 0.06);
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary) !important;
+  border-color: var(--border-subtle);
+}
+
+.btn-ghost:hover {
   color: var(--text-primary) !important;
-  border: 1px solid rgba(109, 40, 217, 0.2);
-}
-
-[data-theme="light"] .btn-secondary:hover {
-  background: rgba(109, 40, 217, 0.12);
-  border-color: var(--eva-purple);
+  border-color: var(--border-medium);
+  background: var(--bg-surface);
 }
 
 .btn-sm {
-  padding: 8px 18px;
+  min-height: 44px;
+  padding: 8px 16px;
   font-size: 0.86rem;
 }
 
-/* Badges */
-.badge {
+/* Badges de estado discretos */
+.status-tag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
-.badge-eva-purple {
-  background: rgba(139, 92, 246, 0.16);
-  color: #c4b5fd;
-  border: 1px solid rgba(139, 92, 246, 0.35);
+.status-emerald {
+  background: var(--accent-green-soft);
+  color: var(--accent-green);
+  border: 1px solid rgba(56, 184, 124, 0.28);
 }
 
-.badge-eva-green {
-  background: rgba(34, 197, 94, 0.16);
-  color: var(--eva-green);
-  border: 1px solid rgba(34, 197, 94, 0.35);
+.status-violet {
+  background: var(--accent-purple-soft);
+  color: var(--accent-purple);
+  border: 1px solid rgba(165, 148, 249, 0.28);
 }
 
-.badge-cyan {
-  background: rgba(34, 197, 94, 0.14);
-  color: var(--eva-green);
-  border: 1px solid rgba(34, 197, 94, 0.3);
+[data-theme="light"] .status-emerald {
+  border-color: rgba(25, 122, 75, 0.26);
 }
 
-.badge-emerald {
-  background: rgba(34, 197, 94, 0.16);
-  color: var(--eva-green);
-  border: 1px solid rgba(34, 197, 94, 0.35);
+[data-theme="light"] .status-violet {
+  border-color: rgba(85, 62, 184, 0.26);
 }
 
-.badge-purple {
-  background: rgba(139, 92, 246, 0.16);
-  color: #c4b5fd;
-  border: 1px solid rgba(139, 92, 246, 0.35);
-}
-
-.pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--eva-green);
-  position: relative;
-  display: inline-block;
-}
-
-.pulse-dot::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: var(--eva-green);
-  animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(2.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 0; }
-}
-
-/* Glass Card */
-.glass-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+/* Superficies estructurales con elevación y profundidad */
+.surface-card {
+  background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-normal);
-  position: relative;
-  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-normal), background-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
 }
 
-.glass-card:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--border-glow);
-  box-shadow: var(--shadow-lg), var(--shadow-green-glow);
-  transform: translateY(-4px);
-}
-
-/* Layout Containers */
+/* Contenedores amplios y bandas de sección claramente diferenciadas */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 .section-padding {
-  padding: 80px 0;
+  position: relative;
+  padding: 88px 0;
 }
 
-.section-header {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 48px;
+.section-band-alt {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-medium);
+  border-bottom: 1px solid var(--border-medium);
+  box-shadow: var(--band-inset-shadow);
 }
 
-.section-header .section-tag {
-  margin-bottom: 14px;
+/* Encabezado editorial con presencia de capítulo */
+.editorial-header {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border-medium);
 }
 
-.section-header h2 {
-  font-size: 2.4rem;
-  margin-bottom: 14px;
+.editorial-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 96px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent-green) 0%, var(--accent-purple) 100%);
 }
 
-.section-header p {
+.editorial-header-main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-medium);
+  border-left: 3px solid var(--accent-green);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-purple);
+}
+
+.editorial-header h2 {
+  font-size: clamp(1.9rem, 2.8vw, 2.35rem);
+  font-weight: 800;
+}
+
+.editorial-header-desc {
+  max-width: 54ch;
   color: var(--text-secondary);
-  font-size: 1.08rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.58;
 }
